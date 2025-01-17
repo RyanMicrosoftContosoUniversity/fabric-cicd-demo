@@ -1,0 +1,4 @@
+client_id: "15a84224-c1e2-45e0-a2f5-fc8f5206f81d"
+keyvault_uri: "https://kvfabricprodeus2rh.vault.azure.net/"
+secret_name: "spn-secret"
+tenant_id: "35acf02c-4b87-4ae6-9221-ff5cafd430b4"
