@@ -89,6 +89,7 @@ else:
     print("Validation failed")
     mssparkutils.notebook.exit("Data quality vaidations have failed.")
 
+
 # METADATA ********************
 
 # META {

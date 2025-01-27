@@ -12,6 +12,9 @@
           },
           "datasetSettings": {
             "type": "AzureSqlTable",
+            "typeProperties": {
+              "database": "WWI"
+            },
             "schema": [],
             "externalReferences": {
               "connection": "84f23e28-efeb-4d7c-9f85-909ef51b337a"
@@ -56,7 +59,8 @@
                       "table": {
                         "value": "@item().table_name",
                         "type": "Expression"
-                      }
+                      },
+                      "database": "WWI"
                     },
                     "schema": [],
                     "externalReferences": {
@@ -170,7 +174,10 @@
               "typeProperties": {
                 "source": {
                   "type": "AzureSqlSource",
-                  "sqlReaderQuery": "@concat('SELECT * FROM [dbo].[SchemaMetadata] WHERE TableName=''',item().table_name,'''')",
+                  "sqlReaderQuery": {
+                    "value": "@concat('SELECT * FROM [dbo].[SchemaMetadata] WHERE TableName=''',item().table_name,'''')",
+                    "type": "Expression"
+                  },
                   "partitionOption": "None",
                   "queryTimeout": "02:00:00"
                 },
@@ -219,7 +226,10 @@
                       "workspaceId": "00000000-0000-0000-0000-000000000000",
                       "parameters": {
                         "metadata": {
-                          "value": "@string(activity('LookupMetadata').output.value)",
+                          "value": {
+                            "value": "@string(activity('LookupMetadata').output.value)",
+                            "type": "Expression"
+                          },
                           "type": "string"
                         }
                       }
@@ -254,11 +264,17 @@
                 "workspaceId": "00000000-0000-0000-0000-000000000000",
                 "parameters": {
                   "cw_table": {
-                    "value": "@item().table_name",
+                    "value": {
+                      "value": "@item().table_name",
+                      "type": "Expression"
+                    },
                     "type": "string"
                   },
                   "metadata": {
-                    "value": "@string(activity('LookupMetadata').output.value)",
+                    "value": {
+                      "value": "@string(activity('LookupMetadata').output.value)",
+                      "type": "Expression"
+                    },
                     "type": "string"
                   }
                 }
