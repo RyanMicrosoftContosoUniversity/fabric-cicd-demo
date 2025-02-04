@@ -12,8 +12,11 @@ from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 import yaml
 
+# use DEV as parameter
+target_environment = 'DEV'
+
 # load yaml config file
-with open('.cicd\spn_config.yml', 'r') as file:
+with open('fabric-devops-example\.cicd\spn_config.yml', 'r') as file:
     config = yaml.safe_load(file)
 
     client_id = config['client_id']
@@ -29,17 +32,23 @@ client_secret = secret_client.get_secret(secret_name)
 # get access token
 token_credential = ClientSecretCredential(client_id=client_id, client_secret=client_secret.value, tenant_id=tenant_id)
 
-# Sample values for FabricWorkspace parameters
-workspace_id = "7afc490e-115f-472c-a205-17dc6a5bee52"
-environment = "Development"
-repository_directory = "fabric_items"
-item_type_in_scope = ["Notebook", "Environment"]
+# get target deployment values
+with open(r'fabric-devops-example\target_deployment.yml', 'r') as file:
+    target_deployment = yaml.safe_load(file)
+    target_values = target_deployment[target_environment]
+
+    target_workspace_name = target_values['target_workspace_name']
+    target_workspace_id = target_values['target_workspace_id']
+    repo_directory = target_values['repo_directory']
+    item_type_in_scope = target_values['items_in_scope']
+
+
 
 # Initialize the FabricWorkspace object with the required parameters
 target_workspace = FabricWorkspace(
-    workspace_id=workspace_id,
-    environment=environment,
-    repository_directory=repository_directory,
+    workspace_id=target_workspace_id,
+    environment=target_environment,
+    repository_directory=repo_directory,
     item_type_in_scope=item_type_in_scope,
     token_credential=token_credential,
 )
