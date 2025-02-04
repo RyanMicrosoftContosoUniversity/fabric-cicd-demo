@@ -6,7 +6,9 @@
 # META   "kernel_info": {
 # META     "name": "synapse_pyspark"
 # META   },
-# META   "dependencies": {}
+# META   "dependencies": {
+# META     "environment": {}
+# META   }
 # META }
 
 # CELL ********************
