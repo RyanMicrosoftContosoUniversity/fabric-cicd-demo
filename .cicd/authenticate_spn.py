@@ -1,10 +1,3 @@
-# Copyright (c) Microsoft Corporation.
-# Licensed under the MIT License.
-
-"""
-Example of authenticating with SPN + Secret
-Can be expanded to retrieve values from Key Vault or other sources
-"""
 
 from azure.identity import ClientSecretCredential
 from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan_items
@@ -16,7 +9,7 @@ import yaml
 target_environment = 'DEV'
 
 # load yaml config file
-with open('fabric-devops-example\.cicd\spn_config.yml', 'r') as file:
+with open(r'.cicd\spn_config.yml', 'r') as file:
     config = yaml.safe_load(file)
 
     client_id = config['client_id']
@@ -33,7 +26,7 @@ client_secret = secret_client.get_secret(secret_name)
 token_credential = ClientSecretCredential(client_id=client_id, client_secret=client_secret.value, tenant_id=tenant_id)
 
 # get target deployment values
-with open(r'fabric-devops-example\target_deployment.yml', 'r') as file:
+with open(r'.cicd\target_deployment.yml', 'r') as file:
     target_deployment = yaml.safe_load(file)
     target_values = target_deployment[target_environment]
 
