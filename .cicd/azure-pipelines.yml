@@ -53,7 +53,6 @@ stages:
 
     - script: |
         echo "Target Environment: $(targetEnvironment)"
-        cd fabric-cicd-demo
         python ./.cicd/authenticate_spn.py $(targetEnvironment)
       env:
         AZURE_CLIENT_ID: $(client-id)
