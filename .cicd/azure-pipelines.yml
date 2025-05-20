@@ -53,6 +53,7 @@ stages:
 
     - script: |
         echo "Target Environment: $(targetEnvironment)"
+        ls
         python ./.cicd/authenticate_spn.py $(targetEnvironment)
       env:
         AZURE_CLIENT_ID: $(client-id)
