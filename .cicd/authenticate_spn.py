@@ -10,8 +10,7 @@ import os
 target_environment = 'DEV'
 
 # load yaml config file
-config_path = os.path.join('.cicd', 'spn_config.yml')
-with open(r'.cicd\spn_config.yml', 'r') as file:
+with open(r'spn_config.yml', 'r') as file:
     config = yaml.safe_load(file)
 
     client_id = config['client_id']
