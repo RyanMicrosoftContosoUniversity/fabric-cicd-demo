@@ -1,30 +1,44 @@
 from azure.identity import ClientSecretCredential
 from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan_items
-from azure.identity import DefaultAzureCredential
-from azure.keyvault.secrets import SecretClient
 import yaml
 import os
 import sys
 
-# Use command-line parameter or default to 'DEV'
-target_environment = sys.argv[1] if len(sys.argv) > 1 else 'DEV'
+# Use command-line parameters
+if len(sys.argv) < 4:
+    print("Usage: python authenticate_spn_platform_independent.py <environment> <client_id> <tenant_id> <client_secret>")
+    print(f"Received {len(sys.argv)} arguments")
+    target_environment = sys.argv[1] if len(sys.argv) > 1 else 'DEV'
+    # Try to fall back to environment variables if they exist
+    client_id = os.environ.get('AZURE_CLIENT_ID')
+    tenant_id = os.environ.get('AZURE_TENANT_ID')
+    client_secret = os.environ.get('AZURE_CLIENT_SECRET')
+    
+    if not all([client_id, tenant_id, client_secret]):
+        print("ERROR: Insufficient authentication parameters provided.")
+        print("Please provide client_id, tenant_id, and client_secret as command line arguments")
+        print("or set AZURE_CLIENT_ID, AZURE_TENANT_ID, AZURE_CLIENT_SECRET environment variables.")
+        sys.exit(1)
+else:
+    target_environment = sys.argv[1]
+    client_id = sys.argv[2]
+    tenant_id = sys.argv[3]
+    client_secret = sys.argv[4] if len(sys.argv) > 4 else os.environ.get('AZURE_CLIENT_SECRET')
+
 print(f"Using environment: {target_environment}")
+print(f"Using client ID: {client_id[:5]}...{client_id[-5:] if len(client_id) > 10 else ''}")
+print(f"Using tenant ID: {tenant_id[:5]}...{tenant_id[-5:] if len(tenant_id) > 10 else ''}")
 
 # Platform-independent path for the config file
-spn_config_path = os.path.join('.cicd', 'spn_config.yml')
-print(f"Loading config from: {spn_config_path}")
+target_deployment_path = os.path.join('.cicd', 'target_deployment.yml')
+print(f"Loading deployment config from: {target_deployment_path}")
 
-# load yaml config file
-with open(spn_config_path, 'r') as file:
-    config = yaml.safe_load(file)
-
-    client_id = config['client_id']
-    keyvault_uri = config['keyvault_uri']
-    secret_name = config['secret_name']
-    tenant_id = config['tenant_id']
-
-# get spn secret
-credential = DefaultAzureCredential()
+# Create a token credential directly from the provided credentials
+token_credential = ClientSecretCredential(
+    tenant_id=tenant_id,
+    client_id=client_id,
+    client_secret=client_secret
+)
 secret_client = SecretClient(vault_url=keyvault_uri, credential=credential)
 client_secret = secret_client.get_secret(secret_name)
 
