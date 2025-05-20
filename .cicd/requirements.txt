@@ -1,6 +1,5 @@
 azure-identity>=1.13.0
 azure-keyvault-secrets>=4.7.0
 pyyaml>=6.0
-# Add the fabric_cicd package dependency - replace with the correct package name if different
-# If fabric_cicd is a custom package, it should be installed from a repo or locally
-# fabric-cicd>=1.0.0
+fabric-cicd
+
