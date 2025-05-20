@@ -4,11 +4,13 @@ from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan
 from azure.identity import DefaultAzureCredential
 from azure.keyvault.secrets import SecretClient
 import yaml
+import os
 
 # use DEV as parameter
 target_environment = 'DEV'
 
 # load yaml config file
+config_path = os.path.join('.cicd', 'spn_config.yml')
 with open(r'.cicd\spn_config.yml', 'r') as file:
     config = yaml.safe_load(file)
 
