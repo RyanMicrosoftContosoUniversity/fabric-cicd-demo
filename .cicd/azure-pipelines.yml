@@ -54,7 +54,7 @@ stages:
     - script: |
         echo "Target Environment: $(targetEnvironment)"
         echo "Current Working Directory:"
-        ls
+        pwd
         python ./.cicd/authenticate_spn.py $(targetEnvironment)
       env:
         AZURE_CLIENT_ID: $(client-id)
