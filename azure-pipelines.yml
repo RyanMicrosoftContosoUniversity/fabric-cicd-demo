@@ -41,7 +41,7 @@ stages:
 
     - task: AzureKeyVault@2
       inputs:
-        azureSubscription: 'FabricServiceConnection'  # Name of the Azure service connection
+        azureSubscription: 'fabric-sc'  # Name of the Azure service connection
         KeyVaultName: '$(KeyVaultName)'  # Value will be set in the pipeline variable
         SecretsFilter: 'spn-secret'  # Secret name as specified in spn_config.yml
       displayName: 'Get Key Vault Secrets'
