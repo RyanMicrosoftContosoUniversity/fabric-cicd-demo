@@ -49,17 +49,22 @@ stages:
     - script: |
         python -m pip install --upgrade pip
         pip install -r .cicd/requirements.txt
-      displayName: 'Install dependencies'
-
-    - script: |
+      displayName: 'Install dependencies'    - script: |
         echo "Target Environment: $(targetEnvironment)"
-        ls
-        python ./.cicd/authenticate_spn.py $(targetEnvironment)
-      workingDirectory: $(Build.SourcesDirectory)/
+        echo "Current Working Directory:"
+        ls -la
+        # Copy config files to the expected locations with Linux-compatible paths
+        mkdir -p .cicd
+        cp -f .cicd/spn_config.yml .cicd/spn_config.yml
+        cp -f .cicd/target_deployment.yml .cicd/target_deployment.yml
+        # Run the updated script
+        python ./.cicd/authenticate_spn_platform_independent.py $(targetEnvironment)
       env:
         AZURE_CLIENT_ID: $(client-id)
         AZURE_TENANT_ID: $(tenant-id)
         AZURE_CLIENT_SECRET: $(spn-secret)
+        # Set environment variables in case our script still needs them
+        TARGET_ENV: $(targetEnvironment)
       displayName: 'Run authentication and deployment script'
 
 
