@@ -1,0 +1,61 @@
+trigger:
+  branches:
+    include:
+      - main  # Trigger on changes to the main branch
+  paths:
+    include:
+      - 'fabric_items/**'  # Trigger on changes to files in the fabric_items directory
+
+pool:
+  vmImage: 'ubuntu-latest'  # Use the latest Ubuntu agent
+
+parameters:
+  - name: environment
+    displayName: Deployment Environment
+    type: string
+    default: 'DEV'
+    values:
+      - 'DEV'
+      - 'QA'
+      - 'PROD'
+
+variables:
+  - name: targetEnvironment
+    value: ${{ parameters.environment }}
+
+stages:
+- stage: DeployFabricItems
+  displayName: 'Deploy Fabric Items'
+  jobs:
+  - job: AuthenticateAndDeploy
+    displayName: 'Authenticate and Deploy'
+    steps:
+    - checkout: self  # Checkout the repository
+      fetchDepth: 1   # Fetch only the latest commit
+
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.9'  # Use Python 3.9
+        addToPath: true
+      displayName: 'Set up Python'
+
+    - task: AzureKeyVault@2
+      inputs:
+        azureSubscription: 'FabricServiceConnection'  # Name of the Azure service connection
+        KeyVaultName: '$(KeyVaultName)'  # Value will be set in the pipeline variable
+        SecretsFilter: 'spn-secret'  # Secret name as specified in spn_config.yml
+      displayName: 'Get Key Vault Secrets'
+
+    - script: |
+        python -m pip install --upgrade pip
+        pip install -r .cicd/requirements.txt
+      displayName: 'Install dependencies'
+
+    - script: |
+        echo "Target Environment: $(targetEnvironment)"
+        python ./.cicd/authenticate_spn.py $(targetEnvironment)
+      env:
+        AZURE_CLIENT_ID: $(client-id)
+        AZURE_TENANT_ID: $(tenant-id)
+        AZURE_CLIENT_SECRET: $(spn-secret)
+      displayName: 'Run authentication and deployment script'
