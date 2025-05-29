@@ -2,6 +2,7 @@ trigger:
   branches:
     include:
       - main  
+      - release/*
   paths:
     include:
       - 'fabric_items/**'  
@@ -65,10 +66,3 @@ stages:
 
 
 
-
-# - task: AzureKeyVault@2
-#   inputs:
-#     azureSubscription: 'fabric-sc'
-#     KeyVaultName: 'kvfabricprodeus2rh'
-#     SecretsFilter: 'spn-secret'
-#     RunAsPreJob: true
