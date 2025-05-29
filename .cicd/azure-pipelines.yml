@@ -1,0 +1,68 @@
+trigger:
+  branches:
+    include:
+      - main  
+      - release/*
+  paths:
+    include:
+      - 'fabric_items/**'  
+
+pool:
+  vmImage: 'ubuntu-latest'  
+
+parameters:
+  - name: environment
+    displayName: Deployment Environment
+    type: string
+    default: 'DEV'
+    values:
+      - 'DEV'
+      - 'QA'
+      - 'PROD'
+
+variables:
+  - name: targetEnvironment
+    value: ${{ parameters.environment }}
+
+stages:
+- stage: DeployFabricItems
+  displayName: 'Deploy Fabric Items'
+  jobs:
+  - job: AuthenticateAndDeploy
+    displayName: 'Authenticate and Deploy'
+    steps:
+    - checkout: self  
+      fetchDepth: 1   
+
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.9' 
+        addToPath: true
+      displayName: 'Set up Python'
+
+    - task: AzureKeyVault@2
+      inputs:
+        azureSubscription: 'fabric-sc'  
+        KeyVaultName: '$(KeyVaultName)'  
+        SecretsFilter: 'fuam-spn-tenant-id, fuam-spn-secret, fuam-spn-client-id'
+      displayName: 'Get Key Vault Secrets'
+
+    - script: |
+        python -m pip install --upgrade pip
+        pip install -r .cicd/requirements.txt
+      displayName: 'Install dependencies'
+
+
+    - script: |
+        echo "Target Environment: $(targetEnvironment)"
+        ls -a
+        python ./.cicd/authenticate_spn.py $(targetEnvironment)
+      workingDirectory: $(Build.SourcesDirectory)/
+      env:
+        AZURE_CLIENT_ID: $(fuam-spn-client-id)
+        AZURE_TENANT_ID: $(fuam-spn-tenant-id)
+        AZURE_CLIENT_SECRET: $(fuam-spn-secret)
+      displayName: 'Run authentication and deployment script'
+
+
+
