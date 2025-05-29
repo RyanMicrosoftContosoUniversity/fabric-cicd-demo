@@ -14,14 +14,9 @@ client_secret = os.environ.get('AZURE_CLIENT_SECRET')
 
 if not all([client_id, tenant_id, client_secret]):
     print("ERROR: Missing one or more required environment variables:")
-    print(" - AZURE_CLIENT_ID")
-    print(" - AZURE_TENANT_ID")
-    print(" - AZURE_CLIENT_SECRET")
     sys.exit(1)
 
 print(f"Using environment: {target_environment}")
-print(f"Using client ID: {client_id[:5]}...{client_id[-5:]}")
-print(f"Using tenant ID: {tenant_id[:5]}...{tenant_id[-5:]}")
 
 # Load deployment configuration
 target_deployment_path = os.path.join('.cicd', 'target_deployment.yml')
