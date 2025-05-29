@@ -1,13 +1,13 @@
 trigger:
   branches:
     include:
-      - main  # Trigger on changes to the main branch
+      - main  
   paths:
     include:
-      - 'fabric_items/**'  # Trigger on changes to files in the fabric_items directory
+      - 'fabric_items/**'  
 
 pool:
-  vmImage: 'ubuntu-latest'  # Use the latest Ubuntu agent
+  vmImage: 'ubuntu-latest'  
 
 parameters:
   - name: environment
@@ -30,19 +30,19 @@ stages:
   - job: AuthenticateAndDeploy
     displayName: 'Authenticate and Deploy'
     steps:
-    - checkout: self  # Checkout the repository
-      fetchDepth: 1   # Fetch only the latest commit
+    - checkout: self  
+      fetchDepth: 1   
 
     - task: UsePythonVersion@0
       inputs:
-        versionSpec: '3.9'  # Use Python 3.9
+        versionSpec: '3.9' 
         addToPath: true
       displayName: 'Set up Python'
 
     - task: AzureKeyVault@2
       inputs:
-        azureSubscription: 'fabric-sc'  # Name of the Azure service connection
-        KeyVaultName: '$(KeyVaultName)'  # Value will be set in the pipeline variable
+        azureSubscription: 'fabric-sc'  
+        KeyVaultName: '$(KeyVaultName)'  
         SecretsFilter: 'fuam-spn-tenant-id, fuam-spn-secret, fuam-spn-client-id'
       displayName: 'Get Key Vault Secrets'
 
