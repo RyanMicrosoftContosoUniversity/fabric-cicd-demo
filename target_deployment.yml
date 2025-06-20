@@ -5,6 +5,22 @@ DEV:
   items_in_scope:
     - Notebook
     - Environment
+    - DataPipeline
+    - Report
+    - SemanticModel
+    - Lakehouse
+    - MirroredDatabase
+    - VariableLibrary
+    - CopyJob
+    - Eventhouse
+    - KQLDatabase
+    - KQLQueryset
+    - Reflex
+    - Eventstream
+    - Warehouse
+    - SQLDatabase
+    - KQLDashboard
+    - Dataflow
 
 QA:
   target_workspace_name: devops-test
@@ -13,6 +29,22 @@ QA:
   items_in_scope:
     - Notebook
     - Environment
+    - DataPipeline
+    - Report
+    - SemanticModel
+    - Lakehouse
+    - MirroredDatabase
+    - VariableLibrary
+    - CopyJob
+    - Eventhouse
+    - KQLDatabase
+    - KQLQueryset
+    - Reflex
+    - Eventstream
+    - Warehouse
+    - SQLDatabase
+    - KQLDashboard
+    - Dataflow
 
 PROD:
   target_workspace_name: devops-prod
@@ -21,3 +53,19 @@ PROD:
   items_in_scope:
     - Notebook
     - Environment
+    - DataPipeline
+    - Report
+    - SemanticModel
+    - Lakehouse
+    - MirroredDatabase
+    - VariableLibrary
+    - CopyJob
+    - Eventhouse
+    - KQLDatabase
+    - KQLQueryset
+    - Reflex
+    - Eventstream
+    - Warehouse
+    - SQLDatabase
+    - KQLDashboard
+    - Dataflow
