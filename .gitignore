@@ -1,2 +1,4 @@
 fabric_cicd.error.*
 fabric_cicd.error.log
+.cicd/authenticate_spn_platform_independent.py
+.cicd/authenticate_spn_direct.py

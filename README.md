@@ -7,6 +7,7 @@ This repository demonstrates continuous integration and continuous deployment (C
 This project builds on the official Microsoft Fabric CI/CD framework:
 - Official Repository: [https://github.com/microsoft/fabric-cicd](https://github.com/microsoft/fabric-cicd)
 - Documentation: [https://microsoft.github.io/fabric-cicd/latest/](https://microsoft.github.io/fabric-cicd/latest/)
+- This Repos Documentation: https://deepwiki.com/RyanMicrosoftContosoUniversity/fabric-cicd-demo#overview
 
 ### Prerequisites
 - Azure DevOps account with appropriate permissions
