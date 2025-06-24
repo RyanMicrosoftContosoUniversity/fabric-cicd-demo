@@ -8,6 +8,8 @@ This project builds on the official Microsoft Fabric CI/CD framework:
 - Official Repository: [https://github.com/microsoft/fabric-cicd](https://github.com/microsoft/fabric-cicd)
 - Documentation: [https://microsoft.github.io/fabric-cicd/latest/](https://microsoft.github.io/fabric-cicd/latest/)
 - This Repos Documentation: https://deepwiki.com/RyanMicrosoftContosoUniversity/fabric-cicd-demo#overview
+- Additional CICD Content: https://github.com/RyanMicrosoftContosoUniversity/cicd_ws
+
 
 ### Prerequisites
 - Azure DevOps account with appropriate permissions
@@ -159,6 +161,7 @@ For broader access management, you can add Azure AD Groups:
 This diagram shows the relationship between connections and users:
 
 ![Connection-User-Table](docs/connections-users-table.png)
+How to create this table is shown in this repo: https://github.com/RyanMicrosoftContosoUniversity/cicd_ws
 
 ## Contributing
 Contributions to improve the demo are welcome. Please submit a pull request with your proposed changes.
