@@ -1,4 +1,4 @@
-find_replace:
+key_value_replace:
     - find_key: $.variables[?(@.name=="health_adls_target_connection")].value
       replace_value:
         DEV: 1f126619-984e-4ab2-b5fa-42d5680242f7
