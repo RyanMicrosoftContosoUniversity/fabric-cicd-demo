@@ -1,0 +1,33 @@
+find_replace:
+    - find_key: $.variables[?(@.name=="health_adls_target_connection")].value
+      replace_value:
+        DEV: 1f126619-984e-4ab2-b5fa-42d5680242f7
+        QA: 1f126619-984e-4ab2-b5fa-42d5680242f7
+        PROD: 1f126619-984e-4ab2-b5fa-42d5680242f7
+      item_type: "VariableLibrary"
+      item_name: "vars"
+    - find_key: $.variables[?(@.name=="health_adls_target_location")].value
+      replace_value:
+        DEV: https://healthsaadlsrheus.dfs.core.windows.net
+        QA: https://healthsaadlsrheus.dfs.core.windows.net
+        PROD: https://healthsaadlsrheus.dfs.core.windows.net
+      item_type: "VariableLibrary"
+      item_name: "vars"
+    - find_key: $.variables[?(@.name=="health_adls_target_subpath")].value
+      replace_value:
+        DEV: /healthdata
+        QA: /healthdata
+        PROD: /healthdata
+      item_type: "VariableLibrary"
+      item_name: "vars"
+
+
+# spark_pool:
+#     # CapacityPool_Large
+#     "72c68dbc-0775-4d59-909d-a47896f4573b":
+#         type: "Capacity"
+#         name: "CapacityPool_Large"
+#     # CapacityPool_Medium
+#     "e7b8f1c4-4a6e-4b8b-9b2e-8f1e5d6a9c3d":
+#         type: "Workspace"
+#         name: "WorkspacePool_Medium"
