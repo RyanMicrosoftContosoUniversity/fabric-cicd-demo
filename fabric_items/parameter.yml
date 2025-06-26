@@ -1,25 +1,25 @@
 key_value_replace:
-    - find_key: $.variables[?(@.name=="health_adls_target_connection")].value
+    - find_key: $.variables[?(@.name=="adls_dicom_target_connection")].value
       replace_value:
         DEV: 1f126619-984e-4ab2-b5fa-42d5680242f7
         QA: 1f126619-984e-4ab2-b5fa-42d5680242f7
         PROD: 1f126619-984e-4ab2-b5fa-42d5680242f7
       item_type: "VariableLibrary"
-      item_name: "vars"
-    - find_key: $.variables[?(@.name=="health_adls_target_location")].value
+      item_name: "vars_2"
+    - find_key: $.variables[?(@.name=="adls_dicom_target_location")].value
       replace_value:
         DEV: https://healthsaadlsrheus.dfs.core.windows.net
         QA: https://healthsaadlsrheus.dfs.core.windows.net
         PROD: https://healthsaadlsrheus.dfs.core.windows.net
       item_type: "VariableLibrary"
-      item_name: "vars"
-    - find_key: $.variables[?(@.name=="health_adls_target_subpath")].value
+      item_name: "vars_2"
+    - find_key: $.variables[?(@.name=="adls_dicom_target_subpath")].value
       replace_value:
-        DEV: /healthdata
-        QA: /healthdata
-        PROD: /healthdata
+        DEV: /dicom
+        QA: /dicom
+        PROD: /dicom
       item_type: "VariableLibrary"
-      item_name: "vars"
+      item_name: "vars_2"
 
 
 # spark_pool:
