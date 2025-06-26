@@ -6,6 +6,7 @@ from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan
 
 # add shortcuts support
 # append_feature_flag("enable_shortcut_publish")
+append_feature_flag("enable_lakehouse_unpublish")
 
 # Get environment from command-line or default to 'DEV'
 target_environment = sys.argv[1] if len(sys.argv) > 1 else 'DEV'
