@@ -10,5 +10,17 @@
         "subpath": "$(/**/vars/health_adls_target_subpath)"
       }
     }
+  },
+  {
+    "name": "dicom",
+    "path": "/Files",
+    "target": {
+      "type": "AdlsGen2",
+      "adlsGen2": {
+        "connectionId": "$(/**/vars_2/adls_dicom_target_connection)",
+        "location": "$(/**/vars_2/adls_dicom_target_location)",
+        "subpath": "$(/**/vars_2/adls_dicom_target_subpath)"
+      }
+    }
   }
 ]
