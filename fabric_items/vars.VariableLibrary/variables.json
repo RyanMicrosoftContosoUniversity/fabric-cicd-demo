@@ -36,6 +36,12 @@
       "note": "",
       "type": "String",
       "value": "spn-secret"
+    },
+    {
+      "name": "metadata_lh_abfs_table_path",
+      "note": "",
+      "type": "String",
+      "value": "abfss://7afc490e-115f-472c-a205-17dc6a5bee52@onelake.dfs.fabric.microsoft.com/88b6e0df-1f87-4131-9179-5b2c9719106e/Tables"
     }
   ]
 }
