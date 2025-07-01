@@ -1,5 +1,14 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/valueSet/1.0.0/schema.json",
   "name": "QA",
-  "variableOverrides": []
+  "variableOverrides": [
+    {
+      "name": "workspace_id",
+      "value": "2ae91835-ea46-482c-8656-14362495e197"
+    },
+    {
+      "name": "item_id",
+      "value": "15f986b3-fffd-41ff-b1fd-dfbf9b445b06"
+    }
+  ]
 }

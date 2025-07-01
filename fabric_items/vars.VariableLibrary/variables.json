@@ -2,22 +2,40 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/variableLibrary/definition/variables/1.0.0/schema.json",
   "variables": [
     {
-      "name": "health_adls_target_connection",
+      "name": "workspace_id",
       "note": "",
       "type": "String",
-      "value": "1f126619-984e-4ab2-b5fa-42d5680242f7"
+      "value": "7afc490e-115f-472c-a205-17dc6a5bee52"
     },
     {
-      "name": "health_adls_target_location",
+      "name": "item_id",
       "note": "",
       "type": "String",
-      "value": "https://healthsaadlsrheus.dfs.core.windows.net"
+      "value": "7afc490e-115f-472c-a205-17dc6a5bee52"
     },
     {
-      "name": "health_adls_target_subpath",
+      "name": "kv_uri",
       "note": "",
       "type": "String",
-      "value": "/healthdata"
+      "value": "https://kvfabricprodeus2rh.vault.azure.net/"
+    },
+    {
+      "name": "tenant_id_secret",
+      "note": "",
+      "type": "String",
+      "value": "tenantID"
+    },
+    {
+      "name": "client_id_secret",
+      "note": "",
+      "type": "String",
+      "value": "spn-client-id"
+    },
+    {
+      "name": "client_secret_name",
+      "note": "",
+      "type": "String",
+      "value": "spn-secret"
     }
   ]
 }
