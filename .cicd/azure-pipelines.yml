@@ -84,6 +84,16 @@ stages:
         AZURE_TENANT_ID: $(tenantID)
         AZURE_CLIENT_SECRET: $(fabric-prod-secret)
       displayName: 'Run authentication and deployment script (PROD)'
+    
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.SourcesDirectory)/fabric_cicd.error.log'
+        ArtifactName: 'errorlog'
+        publishLocation: 'Container'
+      condition: always()
+      displayName: 'Publish error log artifact'
+
+
 
 
 
