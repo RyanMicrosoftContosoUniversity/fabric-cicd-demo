@@ -41,28 +41,59 @@ stages:
       displayName: 'Set up Python'
 
     - task: AzureKeyVault@2
+      condition: or(eq(variables['targetEnvironment'], 'DEV'), eq(variables['targetEnvironment'], 'QA'))
       inputs:
         azureSubscription: 'fabric-sc'  
-        KeyVaultName: '$(KeyVaultName)'  
-        SecretsFilter: 'fuam-spn-tenant-id, fuam-spn-secret, fuam-spn-client-id'
-      displayName: 'Get Key Vault Secrets'
+        KeyVaultName: '$(KeyVaultNameNonProd)'  
+        SecretsFilter: 'tenant-id-secret, fabric-non-prod-spn-secret, fabric-non-prod-spn-client-secret'
+      displayName: 'Get Key Vault Secrets (DEV/QA)'
+
+    - task: AzureKeyVault@2
+      condition: eq(variables['targetEnvironment'], 'PROD')
+      inputs:
+        azureSubscription: 'fabric-sc-prod'  
+        KeyVaultName: '$(KeyVaultNameProd)'  
+        SecretsFilter: 'tenantID, fabric-prod-secret, fabric-prod-spn-client-secret'
+      displayName: 'Get Key Vault Secrets (PROD)'
 
     - script: |
         python -m pip install --upgrade pip
         pip install -r .cicd/requirements.txt
       displayName: 'Install dependencies'
 
+    - script: |
+        echo "Target Environment: $(targetEnvironment)"
+        ls -a
+        python ./.cicd/authenticate_spn.py $(targetEnvironment)
+      condition: or(eq(variables['targetEnvironment'], 'DEV'), eq(variables['targetEnvironment'], 'QA'))
+      workingDirectory: $(Build.SourcesDirectory)/
+      env:
+        AZURE_CLIENT_ID: $(fabric-non-prod-spn-client-secret)
+        AZURE_TENANT_ID: $(tenant-id-secret)
+        AZURE_CLIENT_SECRET: $(fabric-non-prod-spn-secret)
+      displayName: 'Run authentication and deployment script (DEV/QA)'
 
     - script: |
         echo "Target Environment: $(targetEnvironment)"
         ls -a
         python ./.cicd/authenticate_spn.py $(targetEnvironment)
+      condition: eq(variables['targetEnvironment'], 'PROD')
       workingDirectory: $(Build.SourcesDirectory)/
       env:
-        AZURE_CLIENT_ID: $(fuam-spn-client-id)
-        AZURE_TENANT_ID: $(fuam-spn-tenant-id)
-        AZURE_CLIENT_SECRET: $(fuam-spn-secret)
-      displayName: 'Run authentication and deployment script'
+        AZURE_CLIENT_ID: $(fabric-prod-spn-client-secret)
+        AZURE_TENANT_ID: $(tenantID)
+        AZURE_CLIENT_SECRET: $(fabric-prod-secret)
+      displayName: 'Run authentication and deployment script (PROD)'
+    
+    - task: PublishBuildArtifacts@1
+      inputs:
+        PathtoPublish: '$(Build.SourcesDirectory)/fabric_cicd.error.log'
+        ArtifactName: 'errorlog'
+        publishLocation: 'Container'
+      condition: always()
+      displayName: 'Publish error log artifact'
+
+
 
 
 
