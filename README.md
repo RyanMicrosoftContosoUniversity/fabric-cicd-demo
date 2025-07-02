@@ -106,6 +106,11 @@ PROD:
   # Production configuration...
 ```
 
+## CICD SPN Overview
+The diagram below illustrates where the SPNs sit in the overall framework
+
+![CICD SPN Overview](docs/cicd_spn_overview.png)
+
 ## Connection Management
 
 ### Fabric Connections Process
