@@ -41,11 +41,20 @@ stages:
       displayName: 'Set up Python'
 
     - task: AzureKeyVault@2
+      condition: or(eq(variables['targetEnvironment'], 'DEV'), eq(variables['targetEnvironment'], 'QA'))
       inputs:
         azureSubscription: 'fabric-sc'  
-        KeyVaultName: '$(KeyVaultName)'  
-        SecretsFilter: 'fuam-spn-tenant-id, fuam-spn-secret, fuam-spn-client-id'
-      displayName: 'Get Key Vault Secrets'
+        KeyVaultName: '$(KeyVaultNameNonProd)'  
+        SecretsFilter: 'tenant-id-secret, fabric-non-prod-secret, fabric-non-prod-spn-client-secret'
+      displayName: 'Get Key Vault Secrets (DEV/QA)'
+
+    - task: AzureKeyVault@2
+      condition: eq(variables['targetEnvironment'], 'PROD')
+      inputs:
+        azureSubscription: 'fabric-sc-prod'  
+        KeyVaultName: '$(KeyVaultNameProd)'  
+        SecretsFilter: 'tenantID, fabric-prod-secret, fabric-prod-spn-client-secret'
+      displayName: 'Get Key Vault Secrets (PROD)'
 
     - script: |
         python -m pip install --upgrade pip
@@ -59,9 +68,9 @@ stages:
         python ./.cicd/authenticate_spn.py $(targetEnvironment)
       workingDirectory: $(Build.SourcesDirectory)/
       env:
-        AZURE_CLIENT_ID: $(fuam-spn-client-id)
-        AZURE_TENANT_ID: $(fuam-spn-tenant-id)
-        AZURE_CLIENT_SECRET: $(fuam-spn-secret)
+        AZURE_CLIENT_ID: ${{ if eq(parameters.environment, 'PROD') }}:$(prod-spn-client-id)${{ else }}:$(fuam-spn-client-id)
+        AZURE_TENANT_ID: ${{ if eq(parameters.environment, 'PROD') }}:$(prod-spn-tenant-id)${{ else }}:$(fuam-spn-tenant-id)
+        AZURE_CLIENT_SECRET: ${{ if eq(parameters.environment, 'PROD') }}:$(prod-spn-secret)${{ else }}:$(fuam-spn-secret)
       displayName: 'Run authentication and deployment script'
 
 
