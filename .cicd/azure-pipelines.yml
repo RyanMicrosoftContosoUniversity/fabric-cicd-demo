@@ -45,7 +45,7 @@ stages:
       inputs:
         azureSubscription: 'fabric-sc'  
         KeyVaultName: '$(KeyVaultNameNonProd)'  
-        SecretsFilter: 'tenant-id-secret, fabric-non-prod-secret, fabric-non-prod-spn-client-secret'
+        SecretsFilter: 'tenant-id-secret, fabric-non-prod-spn-secret, fabric-non-prod-spn-client-secret'
       displayName: 'Get Key Vault Secrets (DEV/QA)'
 
     - task: AzureKeyVault@2
