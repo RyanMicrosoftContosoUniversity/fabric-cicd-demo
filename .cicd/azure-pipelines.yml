@@ -70,7 +70,7 @@ stages:
       env:
         AZURE_CLIENT_ID: $(fabric-non-prod-spn-client-secret)
         AZURE_TENANT_ID: $(tenant-id-secret)
-        AZURE_CLIENT_SECRET: $(fabric-non-prod-secret)
+        AZURE_CLIENT_SECRET: $(fabric-non-prod-spn-secret)
       displayName: 'Run authentication and deployment script (DEV/QA)'
 
     - script: |
