@@ -61,17 +61,29 @@ stages:
         pip install -r .cicd/requirements.txt
       displayName: 'Install dependencies'
 
+    - script: |
+        echo "Target Environment: $(targetEnvironment)"
+        ls -a
+        python ./.cicd/authenticate_spn.py $(targetEnvironment)
+      condition: or(eq(variables['targetEnvironment'], 'DEV'), eq(variables['targetEnvironment'], 'QA'))
+      workingDirectory: $(Build.SourcesDirectory)/
+      env:
+        AZURE_CLIENT_ID: $(fabric-non-prod-spn-client-secret)
+        AZURE_TENANT_ID: $(tenant-id-secret)
+        AZURE_CLIENT_SECRET: $(fabric-non-prod-secret)
+      displayName: 'Run authentication and deployment script (DEV/QA)'
 
     - script: |
         echo "Target Environment: $(targetEnvironment)"
         ls -a
         python ./.cicd/authenticate_spn.py $(targetEnvironment)
+      condition: eq(variables['targetEnvironment'], 'PROD')
       workingDirectory: $(Build.SourcesDirectory)/
       env:
-        AZURE_CLIENT_ID: ${{ if eq(parameters.environment, 'PROD') }}:$(prod-spn-client-id)${{ else }}:$(fuam-spn-client-id)
-        AZURE_TENANT_ID: ${{ if eq(parameters.environment, 'PROD') }}:$(prod-spn-tenant-id)${{ else }}:$(fuam-spn-tenant-id)
-        AZURE_CLIENT_SECRET: ${{ if eq(parameters.environment, 'PROD') }}:$(prod-spn-secret)${{ else }}:$(fuam-spn-secret)
-      displayName: 'Run authentication and deployment script'
+        AZURE_CLIENT_ID: $(fabric-prod-spn-client-secret)
+        AZURE_TENANT_ID: $(tenantID)
+        AZURE_CLIENT_SECRET: $(fabric-prod-secret)
+      displayName: 'Run authentication and deployment script (PROD)'
 
 
 
