@@ -2,61 +2,6 @@
   "properties": {
     "activities": [
       {
-        "type": "TridentNotebook",
-        "typeProperties": {
-          "notebookId": "7991c2c9-779b-40a3-acd9-4c626e7da752",
-          "workspaceId": "a8cbda3d-903e-4154-97d9-9a91c95abb42",
-          "parameters": {
-            "workspace_id": {
-              "value": {
-                "value": "@pipeline().libraryVariables.workspace_id",
-                "type": "Expression"
-              },
-              "type": "string"
-            },
-            "item_id": {
-              "value": {
-                "value": "@pipeline().libraryVariables.item_id",
-                "type": "Expression"
-              },
-              "type": "string"
-            },
-            "shortcut_name": {
-              "value": {
-                "value": "@pipeline().libraryVariables.health_adls_shortcut_name",
-                "type": "Expression"
-              },
-              "type": "string"
-            },
-            "shortcut_path": {
-              "value": {
-                "value": "@pipeline().libraryVariables.health_adls_shortcut_path",
-                "type": "Expression"
-              },
-              "type": "string"
-            },
-            "shortcut_target": {
-              "value": {
-                "value": "@pipeline().libraryVariables.health_adls_target",
-                "type": "Expression"
-              },
-              "type": "string"
-            }
-          }
-        },
-        "policy": {
-          "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
-          "secureInput": false,
-          "secureOutput": false
-        },
-        "name": "Create Shortcut Notebook",
-        "state": "Inactive",
-        "onInactiveMarkAs": "Succeeded",
-        "dependsOn": []
-      },
-      {
         "type": "Lookup",
         "typeProperties": {
           "source": {
