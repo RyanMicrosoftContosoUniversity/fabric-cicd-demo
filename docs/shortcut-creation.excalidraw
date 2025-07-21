@@ -1,0 +1,220 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "https://marketplace.visualstudio.com/items?itemName=pomdtr.excalidraw-editor",
+  "elements": [
+    {
+      "id": "GOQNbNCF7aKWvDpZg2E_v",
+      "type": "rectangle",
+      "x": 539,
+      "y": 302,
+      "width": 170,
+      "height": 118,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a0",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1592334981,
+      "version": 131,
+      "versionNonce": 23032101,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "fA6jDoR4xtgwaKWze568d"
+        },
+        {
+          "id": "XHOdWkP0BY4jRza9swY9n",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1751384452629,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "fA6jDoR4xtgwaKWze568d",
+      "type": "text",
+      "x": 544.2300415039062,
+      "y": 311,
+      "width": 159.5399169921875,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a1",
+      "roundness": null,
+      "seed": 1082504107,
+      "version": 157,
+      "versionNonce": 1216322315,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1751384446143,
+      "link": null,
+      "locked": false,
+      "text": "Define\nShortcuts to be\ncreated in\nMetadata LH",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "GOQNbNCF7aKWvDpZg2E_v",
+      "originalText": "Define Shortcuts to be created in Metadata LH",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "B0lxCCx8-fAVpMY3DAJLA",
+      "type": "rectangle",
+      "x": 799,
+      "y": 297,
+      "width": 170,
+      "height": 118,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a2",
+      "roundness": {
+        "type": 3
+      },
+      "seed": 1389803595,
+      "version": 114,
+      "versionNonce": 1334854891,
+      "isDeleted": false,
+      "boundElements": [
+        {
+          "type": "text",
+          "id": "qMpsG4hBxUnx9Gpw10z5o"
+        },
+        {
+          "id": "XHOdWkP0BY4jRza9swY9n",
+          "type": "arrow"
+        }
+      ],
+      "updated": 1751384454868,
+      "link": null,
+      "locked": false
+    },
+    {
+      "id": "qMpsG4hBxUnx9Gpw10z5o",
+      "type": "text",
+      "x": 805.6800537109375,
+      "y": 306,
+      "width": 156.639892578125,
+      "height": 100,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a3",
+      "roundness": null,
+      "seed": 1737455339,
+      "version": 190,
+      "versionNonce": 2058252171,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1751384454868,
+      "link": null,
+      "locked": false,
+      "text": "create_metadat\na_tables\nNotebook\ncreates tables",
+      "fontSize": 20,
+      "fontFamily": 5,
+      "textAlign": "center",
+      "verticalAlign": "middle",
+      "containerId": "B0lxCCx8-fAVpMY3DAJLA",
+      "originalText": "create_metadata_tables Notebook creates tables",
+      "autoResize": true,
+      "lineHeight": 1.25
+    },
+    {
+      "id": "XHOdWkP0BY4jRza9swY9n",
+      "type": "arrow",
+      "x": 713.8824008272404,
+      "y": 359.283377268229,
+      "width": 84.29747221845844,
+      "height": 2.881498879109131,
+      "angle": 0,
+      "strokeColor": "#1e1e1e",
+      "backgroundColor": "transparent",
+      "fillStyle": "solid",
+      "strokeWidth": 2,
+      "strokeStyle": "solid",
+      "roughness": 1,
+      "opacity": 100,
+      "groupIds": [],
+      "frameId": null,
+      "index": "a4",
+      "roundness": {
+        "type": 2
+      },
+      "seed": 737280811,
+      "version": 49,
+      "versionNonce": 32392747,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1751384454869,
+      "link": null,
+      "locked": false,
+      "points": [
+        [
+          0,
+          0
+        ],
+        [
+          84.29747221845844,
+          2.881498879109131
+        ]
+      ],
+      "lastCommittedPoint": null,
+      "startBinding": {
+        "elementId": "GOQNbNCF7aKWvDpZg2E_v",
+        "focus": -0.08838853740230788,
+        "gap": 6
+      },
+      "endBinding": {
+        "elementId": "B0lxCCx8-fAVpMY3DAJLA",
+        "focus": -0.14216598436918568,
+        "gap": 1
+      },
+      "startArrowhead": null,
+      "endArrowhead": "arrow",
+      "elbowed": false
+    }
+  ],
+  "appState": {
+    "gridSize": 20,
+    "gridStep": 5,
+    "gridModeEnabled": false,
+    "viewBackgroundColor": "#ffffff"
+  },
+  "files": {}
+}
