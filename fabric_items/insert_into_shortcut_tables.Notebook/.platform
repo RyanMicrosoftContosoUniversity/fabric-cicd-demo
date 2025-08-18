@@ -1,11 +1,12 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
   "metadata": {
-    "type": "Warehouse",
-    "displayName": "gold_warehouse"
+    "type": "Notebook",
+    "displayName": "insert_into_shortcut_tables",
+    "description": "New notebook"
   },
   "config": {
     "version": "2.0",
-    "logicalId": "53455dae-79ec-4878-bce5-fbac6b4e4943"
+    "logicalId": "e8f1aa3e-ee15-b838-42c1-4ba4a205bac5"
   }
 }
