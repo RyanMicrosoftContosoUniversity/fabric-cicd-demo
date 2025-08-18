@@ -2,61 +2,6 @@
   "properties": {
     "activities": [
       {
-        "type": "TridentNotebook",
-        "typeProperties": {
-          "notebookId": "7991c2c9-779b-40a3-acd9-4c626e7da752",
-          "workspaceId": "a8cbda3d-903e-4154-97d9-9a91c95abb42",
-          "parameters": {
-            "workspace_id": {
-              "value": {
-                "value": "@pipeline().libraryVariables.workspace_id",
-                "type": "Expression"
-              },
-              "type": "string"
-            },
-            "item_id": {
-              "value": {
-                "value": "@pipeline().libraryVariables.item_id",
-                "type": "Expression"
-              },
-              "type": "string"
-            },
-            "shortcut_name": {
-              "value": {
-                "value": "@pipeline().libraryVariables.health_adls_shortcut_name",
-                "type": "Expression"
-              },
-              "type": "string"
-            },
-            "shortcut_path": {
-              "value": {
-                "value": "@pipeline().libraryVariables.health_adls_shortcut_path",
-                "type": "Expression"
-              },
-              "type": "string"
-            },
-            "shortcut_target": {
-              "value": {
-                "value": "@pipeline().libraryVariables.health_adls_target",
-                "type": "Expression"
-              },
-              "type": "string"
-            }
-          }
-        },
-        "policy": {
-          "timeout": "0.12:00:00",
-          "retry": 0,
-          "retryIntervalInSeconds": 30,
-          "secureInput": false,
-          "secureOutput": false
-        },
-        "name": "Create Shortcut Notebook",
-        "state": "Inactive",
-        "onInactiveMarkAs": "Succeeded",
-        "dependsOn": []
-      },
-      {
         "type": "Lookup",
         "typeProperties": {
           "source": {
@@ -73,8 +18,8 @@
               "properties": {
                 "type": "Lakehouse",
                 "typeProperties": {
-                  "artifactId": "69233f72-a67a-9ab7-4fa9-01774bd2cd19",
-                  "workspaceId": "00000000-0000-0000-0000-000000000000",
+                  "artifactId": "e3fedc51-94ca-4ed7-86b7-9cc4e928401a",
+                  "workspaceId": "3f5b5f79-2192-4a03-a760-4d9ed9366cfc",
                   "rootFolder": "Tables"
                 },
                 "annotations": []
@@ -106,7 +51,7 @@
             {
               "type": "TridentNotebook",
               "typeProperties": {
-                "notebookId": "6e7da752-4c62-acd9-40a3-779b7991c2c9",
+                "notebookId": "2a4c0467-ad4c-a11f-4674-4ad42a77e843",
                 "workspaceId": "00000000-0000-0000-0000-000000000000",
                 "parameters": {
                   "shortcut_name": {
@@ -158,20 +103,6 @@
                     },
                     "type": "string"
                   },
-                  "workspace_id": {
-                    "value": {
-                      "value": "@pipeline().libraryVariables.workspace_id",
-                      "type": "Expression"
-                    },
-                    "type": "string"
-                  },
-                  "item_id": {
-                    "value": {
-                      "value": "@pipeline().libraryVariables.item_id",
-                      "type": "Expression"
-                    },
-                    "type": "string"
-                  },
                   "kv_uri": {
                     "value": {
                       "value": "@pipeline().libraryVariables.kv_uri",
@@ -196,6 +127,20 @@
                   "client_secret_name": {
                     "value": {
                       "value": "@pipeline().libraryVariables.client_secret_name",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "workspace_id": {
+                    "value": {
+                      "value": "@item().workspace_id",
+                      "type": "Expression"
+                    },
+                    "type": "string"
+                  },
+                  "lakehouse_id": {
+                    "value": {
+                      "value": "@item().lakehouse_id",
                       "type": "Expression"
                     },
                     "type": "string"
