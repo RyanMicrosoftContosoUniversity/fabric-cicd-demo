@@ -9,6 +9,7 @@ This project builds on the official Microsoft Fabric CI/CD framework:
 - Documentation: [https://microsoft.github.io/fabric-cicd/latest/](https://microsoft.github.io/fabric-cicd/latest/)
 - This Repos Documentation: https://deepwiki.com/RyanMicrosoftContosoUniversity/fabric-cicd-demo#overview
 - Additional CICD Content: https://github.com/RyanMicrosoftContosoUniversity/cicd_ws
+- Fabric Utilities Repo: https://github.com/RyanMicrosoftContosoUniversity/fabric-utils
 
 
 ### Prerequisites
