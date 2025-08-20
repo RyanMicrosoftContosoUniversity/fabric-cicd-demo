@@ -1,3 +1,0 @@
-dependencies:
-  - pip:
-      - great-expectations==0.18.13
