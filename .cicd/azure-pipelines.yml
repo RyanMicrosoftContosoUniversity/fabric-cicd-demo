@@ -65,7 +65,7 @@ stages:
         echo "Target Environment: $(targetEnvironment)"
         echo "Working Directory: $(Build.SourcesDirectory)"
         ls -a
-        python ./.cicd/authenticate_spn.py $(targetEnvironment)
+        python ./.cicd/authenticate_spn.py $(targetEnvironment) ./.cicd/target_deployment.yml
       condition: or(eq(variables['targetEnvironment'], 'DEV'), eq(variables['targetEnvironment'], 'QA'))
       workingDirectory: $(Build.SourcesDirectory)/
       env:
