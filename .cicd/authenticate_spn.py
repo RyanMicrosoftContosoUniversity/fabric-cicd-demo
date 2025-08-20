@@ -24,8 +24,12 @@ if not all([client_id, tenant_id, client_secret]):
 
 print(f"Using environment: {target_environment}")
 
-# Load deployment configuration
-target_deployment_path = os.path.join('.cicd', 'target_deployment.yml')
+# Load deployment configuration updating to sys argv 2
+if len(sys.argv) > 2:
+    # Normalize the user-provided path to ensure it's OS-safe
+    target_deployment_path = os.path.normpath(sys.argv[2])
+    print("Target deployment path:", target_deployment_path)
+
 print(f"Loading deployment config from: {target_deployment_path}")
 
 with open(target_deployment_path, 'r') as file:
