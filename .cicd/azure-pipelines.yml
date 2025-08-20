@@ -36,7 +36,7 @@ stages:
 
     - task: UsePythonVersion@0
       inputs:
-        versionSpec: '3.9' 
+        versionSpec: '3.11' 
         addToPath: true
       displayName: 'Set up Python'
 
@@ -63,6 +63,7 @@ stages:
 
     - script: |
         echo "Target Environment: $(targetEnvironment)"
+        echo "Working Directory: $(Build.SourcesDirectory)"
         ls -a
         python ./.cicd/authenticate_spn.py $(targetEnvironment)
       condition: or(eq(variables['targetEnvironment'], 'DEV'), eq(variables['targetEnvironment'], 'QA'))
@@ -75,6 +76,7 @@ stages:
 
     - script: |
         echo "Target Environment: $(targetEnvironment)"
+        echo "Working Directory: $(Build.SourcesDirectory)"
         ls -a
         python ./.cicd/authenticate_spn.py $(targetEnvironment)
       condition: eq(variables['targetEnvironment'], 'PROD')
