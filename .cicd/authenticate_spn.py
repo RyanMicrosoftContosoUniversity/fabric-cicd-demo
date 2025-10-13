@@ -5,6 +5,9 @@ from azure.identity import ClientSecretCredential
 from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan_items, append_feature_flag
 import fabric_cicd.constants as constants
 
+print("Arguments:", sys.argv)
+
+
 # add shortcuts support
 # append_feature_flag("enable_shortcut_publish")
 append_feature_flag("enable_lakehouse_unpublish")
