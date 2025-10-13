@@ -29,7 +29,7 @@ print(f"Using environment: {target_environment}")
 
 
 # Load deployment configuration updating to sys argv 2
-if len(sys.argv) > 2:
+if len(sys.argv) >= 2:
     # Normalize the user-provided path to ensure it's OS-safe
     target_deployment_path = os.path.normpath(sys.argv[2])
     print("Target deployment path:", target_deployment_path)
