@@ -35,8 +35,8 @@ if len(sys.argv) >= 2:
     print("Target deployment path:", target_deployment_path)
 
 # Load deployment configuration
-target_deployment_path = os.path.join('.cicd', 'target_deployment.yml')
-print(f"Loading deployment config from: {target_deployment_path}")
+# target_deployment_path = os.path.join('.cicd', 'target_deployment.yml')
+# print(f"Loading deployment config from: {target_deployment_path}")
 
 with open(target_deployment_path, 'r') as file:
     target_deployment = yaml.safe_load(file)
