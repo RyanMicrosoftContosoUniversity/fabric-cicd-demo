@@ -31,7 +31,7 @@ if len(sys.argv) > 2:
     target_deployment_path = os.path.normpath(sys.argv[2])
     print("Target deployment path:", target_deployment_path)
 
-=======# Load deployment configuration
+# Load deployment configuration
 target_deployment_path = os.path.join('.cicd', 'target_deployment.yml')
 print(f"Loading deployment config from: {target_deployment_path}")
 
