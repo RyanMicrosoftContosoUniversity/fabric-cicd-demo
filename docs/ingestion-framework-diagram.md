@@ -5,7 +5,7 @@ flowchart TD
     DB[("🗄️ Source Database<br/>SQL Server/Oracle")]
     FILES[("📁 File Sources<br/>CSV/JSON/Parquet")]
     STREAM[("📡 Streaming Data<br/>Event Hub/Kafka")]
-    
+    https://excalidraw.com/
     %% Ingestion Layer
     subgraph INGESTION ["🔄 Data Ingestion Layer"]
         ADF[("⚙️ Azure Data Factory<br/>Data Pipelines")]
@@ -14,7 +14,7 @@ flowchart TD
         DATABRICKS[("🧮 Databricks<br/>Spark Processing")]
     end
     
-    %% Authentication & Security
+    %% Authentication & Securityhttps://excalidraw.com/
     subgraph AUTH ["🔐 Authentication & Security"]
         KV[("🔑 Key Vault<br/>Secrets Management")]
         AAD[("👤 Azure AD<br/>Identity")]
