@@ -6,7 +6,11 @@
     {
       "id": "zxUaLPV9wb19AiO5aI-0a",
       "type": "rectangle",
+<<<<<<< HEAD
       "x": 615.1341042839198,
+=======
+      "x": 613.6667175292969,
+>>>>>>> main
       "y": 354.3334045410156,
       "width": 206.66668701171875,
       "height": 185.33334350585938,
@@ -25,8 +29,13 @@
         "type": 3
       },
       "seed": 1377871965,
+<<<<<<< HEAD
       "version": 91,
       "versionNonce": 853336198,
+=======
+      "version": 86,
+      "versionNonce": 915719123,
+>>>>>>> main
       "isDeleted": false,
       "boundElements": [
         {
@@ -44,6 +53,7 @@
         {
           "id": "iCpkhkFt0Cw7ccGmiG29m",
           "type": "arrow"
+<<<<<<< HEAD
         },
         {
           "id": "v40eTWQXJyOND8TkRabgI",
@@ -59,13 +69,22 @@
         }
       ],
       "updated": 1755802037356,
+=======
+        }
+      ],
+      "updated": 1755627319866,
+>>>>>>> main
       "link": null,
       "locked": false
     },
     {
       "id": "xbN6ASoQwJZdGvwE0uK0J",
       "type": "text",
+<<<<<<< HEAD
       "x": 622.1475243889003,
+=======
+      "x": 620.6801376342773,
+>>>>>>> main
       "y": 397.0000762939453,
       "width": 192.6398468017578,
       "height": 100,
@@ -82,11 +101,19 @@
       "index": "a1",
       "roundness": null,
       "seed": 1734724317,
+<<<<<<< HEAD
       "version": 99,
       "versionNonce": 918216646,
       "isDeleted": false,
       "boundElements": [],
       "updated": 1755802037356,
+=======
+      "version": 97,
+      "versionNonce": 630378867,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1755627319866,
+>>>>>>> main
       "link": null,
       "locked": false,
       "text": "Existing CICD\nFrame\nLive in it's own repo\nADO Repo",
@@ -102,8 +129,13 @@
     {
       "id": "Zu76egoxzyugIbFSpKbrK",
       "type": "rectangle",
+<<<<<<< HEAD
       "x": 1049.7102343591323,
       "y": 176.02174315612854,
+=======
+      "x": 1051.6668395996094,
+      "y": 177.0000457763672,
+>>>>>>> main
       "width": 206.66668701171875,
       "height": 185.33334350585938,
       "angle": 0,
@@ -121,8 +153,13 @@
         "type": 3
       },
       "seed": 1521387133,
+<<<<<<< HEAD
       "version": 145,
       "versionNonce": 1147674374,
+=======
+      "version": 141,
+      "versionNonce": 1675689971,
+>>>>>>> main
       "isDeleted": false,
       "boundElements": [
         {
@@ -132,6 +169,7 @@
         {
           "id": "AIsOe1rJJj6bwNcVruQAq",
           "type": "arrow"
+<<<<<<< HEAD
         },
         {
           "id": "Uk_YhBMBvlf9fwcN6vP9I",
@@ -139,14 +177,24 @@
         }
       ],
       "updated": 1755801995333,
+=======
+        }
+      ],
+      "updated": 1755627319866,
+>>>>>>> main
       "link": null,
       "locked": false
     },
     {
       "id": "nlrQbBJS_ehAhcTibVYIp",
       "type": "text",
+<<<<<<< HEAD
       "x": 1055.653647139894,
       "y": 181.18841490905822,
+=======
+      "x": 1057.610252380371,
+      "y": 182.16671752929688,
+>>>>>>> main
       "width": 194.7798614501953,
       "height": 175,
       "angle": 0,
@@ -162,11 +210,19 @@
       "index": "a3",
       "roundness": null,
       "seed": 527609565,
+<<<<<<< HEAD
       "version": 251,
       "versionNonce": 559566406,
       "isDeleted": false,
       "boundElements": [],
       "updated": 1755801995333,
+=======
+      "version": 248,
+      "versionNonce": 1815837331,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1755627364327,
+>>>>>>> main
       "link": null,
       "locked": false,
       "text": "Data Engineer Repo\nDefault \ntarget_deployment.\nyml\nspn_config\nazure-pipeline.yml\nFabric_items",
@@ -183,7 +239,11 @@
       "id": "dgscJ2DNT2lRzct0JBIfh",
       "type": "rectangle",
       "x": 1053.0000915527344,
+<<<<<<< HEAD
       "y": 518.6450659259026,
+=======
+      "y": 517.6667633056641,
+>>>>>>> main
       "width": 206.66668701171875,
       "height": 185.33334350585938,
       "angle": 0,
@@ -201,8 +261,13 @@
         "type": 3
       },
       "seed": 527867133,
+<<<<<<< HEAD
       "version": 209,
       "versionNonce": 1400781146,
+=======
+      "version": 207,
+      "versionNonce": 1216708819,
+>>>>>>> main
       "isDeleted": false,
       "boundElements": [
         {
@@ -212,6 +277,7 @@
         {
           "id": "XX_fIzpOB1sDlTXjvoQsB",
           "type": "arrow"
+<<<<<<< HEAD
         },
         {
           "id": "7Jcn0h0VZJkvmPcfVVXNe",
@@ -219,6 +285,11 @@
         }
       ],
       "updated": 1755801991034,
+=======
+        }
+      ],
+      "updated": 1755627319866,
+>>>>>>> main
       "link": null,
       "locked": false
     },
@@ -226,7 +297,11 @@
       "id": "XoYB3Wo2YKxMjg7ddLieU",
       "type": "text",
       "x": 1062.3034973144531,
+<<<<<<< HEAD
       "y": 536.3117376788323,
+=======
+      "y": 535.3334350585938,
+>>>>>>> main
       "width": 188.05987548828125,
       "height": 150,
       "angle": 0,
@@ -242,11 +317,19 @@
       "index": "a5",
       "roundness": null,
       "seed": 1878259037,
+<<<<<<< HEAD
       "version": 269,
       "versionNonce": 1643033690,
       "isDeleted": false,
       "boundElements": [],
       "updated": 1755781661766,
+=======
+      "version": 268,
+      "versionNonce": 280259123,
+      "isDeleted": false,
+      "boundElements": [],
+      "updated": 1755627398291,
+>>>>>>> main
       "link": null,
       "locked": false,
       "text": "Reporting Repo\ntarget_deployment.\nyml\nspn_config\nazure-pipeline.yml\nFabric_items",
@@ -262,10 +345,17 @@
     {
       "id": "XX_fIzpOB1sDlTXjvoQsB",
       "type": "arrow",
+<<<<<<< HEAD
       "x": 1050.9184013374988,
       "y": 623.5656720961413,
       "width": 278.20253233536346,
       "height": 110.57691738797848,
+=======
+      "x": 1050.2001636268742,
+      "y": 623.0695040134724,
+      "width": 277.35205481863295,
+      "height": 109.54245418305834,
+>>>>>>> main
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -281,8 +371,13 @@
         "type": 2
       },
       "seed": 1967112061,
+<<<<<<< HEAD
       "version": 125,
       "versionNonce": 1696003846,
+=======
+      "version": 122,
+      "versionNonce": 699404253,
+>>>>>>> main
       "isDeleted": false,
       "boundElements": [
         {
@@ -290,7 +385,11 @@
           "id": "Igtl1MEUlZXALJfHQ5SdT"
         }
       ],
+<<<<<<< HEAD
       "updated": 1755802037358,
+=======
+      "updated": 1755627320067,
+>>>>>>> main
       "link": null,
       "locked": false,
       "points": [
@@ -299,12 +398,21 @@
           0
         ],
         [
+<<<<<<< HEAD
           -172.58496627890509,
           28.76770192729623
         ],
         [
           -278.20253233536346,
           -81.80921546068225
+=======
+          -171.86672856828045,
+          29.263870009965103
+        ],
+        [
+          -277.35205481863295,
+          -80.27858417309324
+>>>>>>> main
         ]
       ],
       "lastCommittedPoint": null,
@@ -345,7 +453,11 @@
       "version": 20,
       "versionNonce": 1827303155,
       "isDeleted": false,
+<<<<<<< HEAD
       "boundElements": [],
+=======
+      "boundElements": null,
+>>>>>>> main
       "updated": 1755627185701,
       "link": null,
       "locked": false,
@@ -362,10 +474,17 @@
     {
       "id": "AIsOe1rJJj6bwNcVruQAq",
       "type": "arrow",
+<<<<<<< HEAD
       "x": 1048.9661132800848,
       "y": 254.13734070521957,
       "width": 321.277488700852,
       "height": 139.7734210801404,
+=======
+      "x": 1050.9227185205618,
+      "y": 254.9263394225353,
+      "width": 323.87127023160645,
+      "height": 139.32980830134795,
+>>>>>>> main
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -381,8 +500,13 @@
         "type": 2
       },
       "seed": 573757683,
+<<<<<<< HEAD
       "version": 144,
       "versionNonce": 1986930246,
+=======
+      "version": 139,
+      "versionNonce": 1758035101,
+>>>>>>> main
       "isDeleted": false,
       "boundElements": [
         {
@@ -390,7 +514,11 @@
           "id": "wLRJ4OI_wknx0K82oIGib"
         }
       ],
+<<<<<<< HEAD
       "updated": 1755802037359,
+=======
+      "updated": 1755627320067,
+>>>>>>> main
       "link": null,
       "locked": false,
       "points": [
@@ -399,12 +527,21 @@
           0
         ],
         [
+<<<<<<< HEAD
           -192.63273925664726,
           -40.47065369350082
         ],
         [
           -321.277488700852,
           99.30276738663957
+=======
+          -194.58934449712433,
+          -41.25965241081656
+        ],
+        [
+          -323.87127023160645,
+          98.0701558905314
+>>>>>>> main
         ]
       ],
       "lastCommittedPoint": null,
@@ -445,7 +582,11 @@
       "version": 20,
       "versionNonce": 1501915229,
       "isDeleted": false,
+<<<<<<< HEAD
       "boundElements": [],
+=======
+      "boundElements": null,
+>>>>>>> main
       "updated": 1755627179348,
       "link": null,
       "locked": false,
@@ -949,10 +1090,17 @@
     {
       "id": "iCpkhkFt0Cw7ccGmiG29m",
       "type": "arrow",
+<<<<<<< HEAD
       "x": 589.0445966463615,
       "y": 228.00003051757812,
       "width": 63.92200870126749,
       "height": 125.66532924970062,
+=======
+      "x": 589.0000610351562,
+      "y": 228.00003051757812,
+      "width": 63.33331298828125,
+      "height": 126.00003051757812,
+>>>>>>> main
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -968,11 +1116,19 @@
         "type": 2
       },
       "seed": 206744253,
+<<<<<<< HEAD
       "version": 91,
       "versionNonce": 194866566,
       "isDeleted": false,
       "boundElements": [],
       "updated": 1755802037360,
+=======
+      "version": 89,
+      "versionNonce": 1014937949,
+      "isDeleted": false,
+      "boundElements": null,
+      "updated": 1755627320067,
+>>>>>>> main
       "link": null,
       "locked": false,
       "points": [
@@ -981,8 +1137,13 @@
           0
         ],
         [
+<<<<<<< HEAD
           63.92200870126749,
           125.66532924970062
+=======
+          63.33331298828125,
+          126.00003051757812
+>>>>>>> main
         ]
       ],
       "lastCommittedPoint": null,
@@ -999,6 +1160,7 @@
       "startArrowhead": null,
       "endArrowhead": "arrow",
       "elbowed": false
+<<<<<<< HEAD
     },
     {
       "id": "6X8IHUSAyWvPPpXz0dmv1",
@@ -1688,6 +1850,8 @@
       "originalText": "utilty\nclone shell",
       "autoResize": true,
       "lineHeight": 1.25
+=======
+>>>>>>> main
     }
   ],
   "appState": {
