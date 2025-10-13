@@ -3,10 +3,12 @@ import sys
 import yaml
 from azure.identity import ClientSecretCredential
 from fabric_cicd import FabricWorkspace, publish_all_items, unpublish_all_orphan_items, append_feature_flag
+import fabric_cicd.constants as constants
 
 # add shortcuts support
 # append_feature_flag("enable_shortcut_publish")
 append_feature_flag("enable_lakehouse_unpublish")
+constants.base_api_url="https://api.fabric.microsoft.com"
 
 # Get environment from command-line or default to 'DEV'
 target_environment = sys.argv[1] if len(sys.argv) > 1 else 'DEV'
@@ -22,8 +24,12 @@ if not all([client_id, tenant_id, client_secret]):
 
 print(f"Using environment: {target_environment}")
 
-# Load deployment configuration
-target_deployment_path = os.path.join('.cicd', 'target_deployment.yml')
+# Load deployment configuration updating to sys argv 2
+if len(sys.argv) > 2:
+    # Normalize the user-provided path to ensure it's OS-safe
+    target_deployment_path = os.path.normpath(sys.argv[2])
+    print("Target deployment path:", target_deployment_path)
+
 print(f"Loading deployment config from: {target_deployment_path}")
 
 with open(target_deployment_path, 'r') as file:
