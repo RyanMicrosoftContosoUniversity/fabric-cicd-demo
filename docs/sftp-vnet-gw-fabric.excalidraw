@@ -617,8 +617,8 @@
         "type": 2
       },
       "seed": 1550057380,
-      "version": 187,
-      "versionNonce": 970284068,
+      "version": 211,
+      "versionNonce": 1292280026,
       "isDeleted": false,
       "boundElements": [
         {
@@ -626,7 +626,7 @@
           "id": "0JfOxXTKaOX1ua_zMvgkT"
         }
       ],
-      "updated": 1755286014041,
+      "updated": 1756385119037,
       "link": null,
       "locked": false,
       "points": [
@@ -635,8 +635,8 @@
           0
         ],
         [
-          278.5513922515895,
-          55.91357889464825
+          309.1413412683411,
+          82.13353519472105
         ],
         [
           596.7663349842951,
@@ -646,12 +646,12 @@
       "lastCommittedPoint": null,
       "startBinding": {
         "elementId": "4WoV1ap27P4rXT1YUSZ1L",
-        "focus": -0.4389977401176803,
-        "gap": 2.77987377205568
+        "focus": -0.4950520482132475,
+        "gap": 2.779873772055794
       },
       "endBinding": {
         "elementId": "4uvoFJR-dDmKv_6qCr7Pq",
-        "focus": -0.5779923260527282,
+        "focus": -0.5886686930074652,
         "gap": 6.280831966679216
       },
       "startArrowhead": null,
@@ -661,10 +661,10 @@
     {
       "id": "0JfOxXTKaOX1ua_zMvgkT",
       "type": "text",
-      "x": 709.8035307867926,
-      "y": 12.932813490319404,
-      "width": 55.6171875,
-      "height": 35,
+      "x": 585.4461699469489,
+      "y": -4.567186509680596,
+      "width": 304.3319091796875,
+      "height": 70,
       "angle": 0,
       "strokeColor": "#1e1e1e",
       "backgroundColor": "transparent",
@@ -678,20 +678,20 @@
       "index": "aH",
       "roundness": null,
       "seed": 1183607588,
-      "version": 9,
-      "versionNonce": 2086454820,
+      "version": 52,
+      "versionNonce": 1143844358,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1755286014098,
+      "updated": 1756385113068,
       "link": null,
       "locked": false,
-      "text": "UDR",
+      "text": "nsg rules determine\nwhat can be talked to",
       "fontSize": 28,
       "fontFamily": 5,
       "textAlign": "center",
       "verticalAlign": "middle",
       "containerId": "0mPMv_pCrTCrH9QKXAG3g",
-      "originalText": "UDR",
+      "originalText": "nsg rules determine\nwhat can be talked to",
       "autoResize": true,
       "lineHeight": 1.25
     },
@@ -870,8 +870,8 @@
     {
       "id": "CdNyKeeKnIPo8Hatj7mx6",
       "type": "text",
-      "x": 923.7768987012303,
-      "y": -203.48494106099406,
+      "x": 983.5001324958407,
+      "y": -38.88188206609237,
       "width": 274.51190185546875,
       "height": 35,
       "angle": 0,
@@ -887,11 +887,11 @@
       "index": "aM",
       "roundness": null,
       "seed": 1479603364,
-      "version": 26,
-      "versionNonce": 1655152292,
+      "version": 77,
+      "versionNonce": 1981616646,
       "isDeleted": false,
       "boundElements": [],
-      "updated": 1755286014041,
+      "updated": 1756382911585,
       "link": null,
       "locked": false,
       "text": "VNet Data Gateway",
@@ -927,7 +927,7 @@
       "version": 111,
       "versionNonce": 1749685260,
       "isDeleted": false,
-      "boundElements": null,
+      "boundElements": [],
       "updated": 1755873613226,
       "link": null,
       "locked": false,
