@@ -52,19 +52,12 @@ PROD:
   repo_directory: fabric_items
   items_in_scope:
     - Notebook
-    - Environment
     - DataPipeline
     - Report
     - SemanticModel
     - Lakehouse
     - MirroredDatabase
     - VariableLibrary
-    - CopyJob
-    - Eventhouse
-    - KQLDatabase
-    - KQLQueryset
-    - Reflex
-    - Eventstream
     - Warehouse
     - SQLDatabase
     - KQLDashboard
